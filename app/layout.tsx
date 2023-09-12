@@ -20,9 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>
+      <body className={`${dmSans.className} relative`}>
         <Nav />
-          {children}
+        {children}
         <Footer />
       </body>
     </html>
