@@ -18,8 +18,8 @@ export default async function MovieList(){
     // Movie request
     useEffect(() => {
         const fetchData = async () => {
-            const movies = await getAllMovies(`${pageNumber}`);
-            setMovieData(movies);
+            const moviesData: MoviesResult = await getAllMovies(`${pageNumber}`);
+            setMovieData(moviesData);
         }
 
         fetchData();
@@ -45,7 +45,7 @@ export default async function MovieList(){
     ))
 
     return(
-        <main className="w-[80%] m-auto">
+        <main className="w-[95%] md:w-[80%] m-auto">
             <h1 className="text-[1rem] md:text-[2rem] mb-[2rem]">Movies List</h1>
             <div className="featured-movies gap-x-[2rem] gap-y-[3rem] grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2">
                 { content }

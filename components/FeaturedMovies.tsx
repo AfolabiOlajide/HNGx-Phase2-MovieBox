@@ -17,10 +17,10 @@ const FeaturedMovies = async () => {
     // console.log(movies);
 
     return (
-        <div className="w-[90%] md:w-[80%] m-auto">
+        <div className="w-[95%] md:w-[80%] m-auto">
             <header className="flex justify-between mb-10">
                 <h2 className="md:text-[2rem] text-[1rem]">Featured Movie</h2>
-                <Link href={`/movies`} className="text-main flex items-center gap-[1rem]">
+                <Link href={`/moviesList`} className="text-main flex items-center gap-[1rem]">
                     <span>See more</span>
                     <MdOutlineKeyboardArrowRight />
                 </Link>
