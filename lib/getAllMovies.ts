@@ -8,9 +8,12 @@ export default async function getAllMovies(page: string) {
             `Bearer ${process.env.TMDB_API_READ_ACCESS_TOKEN}`,
         },
     };
-    const res = await fetch(url, options);
+    try {
+        const res = await fetch(url, options);
+        return res.json();
+    } catch (error) {
+        console.log(error)
+    }
 
-    if (!res.ok) throw new Error("Failed to fetch movie data");
-
-    return res.json();
+    // if (!res.ok) throw new Error("Failed to fetch movie data");
 }

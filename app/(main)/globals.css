@@ -21,3 +21,7 @@
     display: none;
 
 }
+
+.transform-index{
+    @apply transition-transform duration-300 ease-in;
+}

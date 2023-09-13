@@ -1,4 +1,5 @@
 // local imports
+import { formatImageLink } from "@/lib/exports";
 import getMovie from "@/lib/getMovie"
 import Image from "next/image";
 
@@ -13,15 +14,15 @@ export default async function MovieDetails({ params: { id } }: Params){
     const movie = await movieData;
 
     return(
-        <div className="movie-details pb-[6rem]">
-            <Image src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} className="w-full" alt={movie.title} width={300} height={300} priority unoptimized={true}/>
+        <div className="movie-details pb-[6rem] pt-[2rem]">
+            <Image src={formatImageLink(movie.backdrop_path)} className="w-full" alt={movie.title} width={300} height={300} priority unoptimized={true}/>
             <div className="title my-[1rem]">
                 <h1 className="text-[2rem]" data-testid="movie-title">Title: {movie.title}</h1>
             </div>
             <div className="overview">
                 <p className="" data-testid="movie-overview">{movie.overview}</p>
             </div>
-            <div className="genres flex gap-[2rem] mt-[1rem]">
+            <div className="genres flex gap-[1.2rem] mt-[1rem]">
                 Genre:
                 {movie.genres.map(genre => (
                     <span key={genre.id} className="text-main">{genre.name}</span>

@@ -40,12 +40,12 @@ export default async function MovieList(){
         }
     }
 
-    const content = movieData?.results.map(movies => (
+    const content = movieData?.results?.map(movies => (
         <MovieCard key={movies?.id} id={movies?.id} title={movies?.title} release_date={movies?.release_date} poster={movies?.poster_path} />
     ))
 
     return(
-        <main className="w-[95%] md:w-[80%] m-auto">
+        <main className="w-[95%] md:w-[80%] m-auto pt-[7rem]">
             <h1 className="text-[1rem] md:text-[2rem] mb-[2rem]">Movies List</h1>
             <div className="featured-movies gap-x-[2rem] gap-y-[3rem] grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2">
                 { content }

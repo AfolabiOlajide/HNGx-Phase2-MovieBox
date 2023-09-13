@@ -1,5 +1,7 @@
-import type { Metadata } from 'next'
-import { DM_Sans } from 'next/font/google'
+import type { Metadata } from 'next';
+import { DM_Sans } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // local imports
 import './globals.css'
@@ -20,10 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className} relative`}>
+      <body className={`${dmSans.className}`}>
         <Nav />
         {children}
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   )
