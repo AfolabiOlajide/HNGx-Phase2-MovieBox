@@ -1,5 +1,6 @@
 // local imports
 import getMovie from "@/lib/getMovie"
+import Image from "next/image";
 
 type Params = {
     params: {
@@ -12,14 +13,24 @@ export default async function MovieDetails({ params: { id } }: Params){
     const movie = await movieData;
 
     return(
-        <div className="movie-details">
-            <h1 className="" data-testid="movie-title">{movie.title}</h1>
-            <br />
-            <p className="" data-testid="movie-overview">{movie.overview}</p>
-            <br />
-            <span className="" data-testid="movie-release-date">Release Date: {movie.release_date}</span>
-            <br />
-            <span className="" data-testid="movie-runtime">Time: {movie.runtime} minutes</span>
+        <div className="movie-details pb-[6rem]">
+            <Image src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} className="w-full" alt={movie.title} width={300} height={300} priority unoptimized={true}/>
+            <div className="title my-[1rem]">
+                <h1 className="text-[2rem]" data-testid="movie-title">Title: {movie.title}</h1>
+            </div>
+            <div className="overview">
+                <p className="" data-testid="movie-overview">{movie.overview}</p>
+            </div>
+            <div className="genres flex gap-[2rem] mt-[1rem]">
+                Genre:
+                {movie.genres.map(genre => (
+                    <span key={genre.id} className="text-main">{genre.name}</span>
+                ))}
+            </div>
+            <div className="others flex gap-[2rem] mt-[2rem]">
+                <span className="" data-testid="movie-release-date">Release Date: <span className="text-main">{movie.release_date}</span></span>
+                <span className="" data-testid="movie-runtime">Time: <span className="text-main">{movie.runtime} minutes</span></span>
+            </div>
         </div>
     )
 }

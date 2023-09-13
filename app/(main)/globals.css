@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.trans{
+.trans {
     @apply duration-300 transition-all ease-in-out;
+}
+
+/* width */
+.content::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Track */
+.content::-webkit-scrollbar-track {
+    display: none;
+}
+
+/* Handle */
+.content::-webkit-scrollbar-thumb {
+    display: none;
+
 }

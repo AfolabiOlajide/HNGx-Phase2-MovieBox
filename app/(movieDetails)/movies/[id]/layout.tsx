@@ -22,7 +22,7 @@ export default function RootLayout({
       <body>
         <div className={`layout lg:grid lg:grid-cols-[15%_85%] ${dmSans.className} h-screen`}>
           <SideBar />
-          <div className="content w-[90%] mx-auto">
+          <div className="content w-[90%] mx-auto overflow-y-auto">
             {children}
           </div>
         </div>
