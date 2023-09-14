@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 // local imports
 import getAllMovies from "@/lib/getAllMovies";
 import MovieCard from "@/components/MovieCard";
+import { isNullishCoalesce } from "typescript";
 
 export default async function MovieList(){
     const [pageNumber, setPageNumber] = useState(1);
     const [movieData, setMovieData] = useState<MoviesResult>()
+    const totalPages = movieData?.total_pages ?? 3000;
 
     // Movie request
     useEffect(() => {
@@ -29,7 +31,7 @@ export default async function MovieList(){
 
     // --------------------------------
     const nextPage = ()=> {
-        if(pageNumber < movieData?.total_pages){
+        if(pageNumber < totalPages){
             setPageNumber(prev => prev+1);
         }
     }
