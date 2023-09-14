@@ -57,7 +57,7 @@ const Hero = () => {
                             <div className="absolute details bg-black/50 top-0 bottom-0 right-0 left-0 h-full">
                                 <div className="content absolute top-[10%] md:top-[20%] left-[10%] w-[50%] lg:w-[30%]">
                                     <h1 className="text-[1rem] md:text-[3rem] lg:text-[5rem] text-white">{movie.title}</h1>
-                                    <p className="text-[0.6rem] md:text-[1rem] text-white mb-[2rem]">{movie.overview}</p>
+                                    <p className="text-[0.6rem] md:text-[1rem] text-white mb-[2rem]">{movie.overview.length > 150 ? `${movie.overview.slice(0,150)}...` : movie.overview}</p>
                                     {/*  */}
                                     <Link href={`/movies/${movie.id}`} className="">
                                         <button className="p-[.7rem] text-[0.7rem] md:text-base md:p-[1rem] text-white bg-main outline-none border-none rounded-lg">Movie Details</button>
