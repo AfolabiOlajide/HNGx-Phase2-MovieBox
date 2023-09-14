@@ -1,3 +1,4 @@
+"use client"
 import FeaturedMovies from "@/components/FeaturedMovies";
 import Hero from "@/components/Hero";
 
