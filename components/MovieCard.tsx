@@ -55,9 +55,11 @@ const MovieCard = (props: MovieCardProp) => {
                         <Image src={formatImageLink(props.poster)} className="w-max" width={200} height={300} alt={props.title} data-testid="movie-poster"/>
                     </div>
                     <div className="details mt-[1rem]">
-                        <p className="movie-title mb-[1rem] font-bold md:text-base text-[.7rem]" datat-testid="movie-title">{props.title}</p>
-
-                        <span className="realease-date text-gray-500 md:text-base text-[.7rem]" data-testid="movie-release-date">Realease Date: {releaseDate}</span>
+                        <p className="movie-title mb-[1rem] font-bold md:text-base text-[.7rem]" data-testid="movie-title">{props.title}</p>
+                        <p>
+                            Realease Date: 
+                            <span className="realease-date text-gray-500 md:text-base text-[.7rem]" data-testid="movie-release-date">{releaseDate}</span>
+                        </p>
                     </div>
                 </div>
             </Link>
