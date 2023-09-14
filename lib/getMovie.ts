@@ -4,7 +4,7 @@ export default async function getMovie(movieId: string) {
         method: "GET",
         headers: {
             accept: "application/json",
-            Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+            Authorization: `Bearer ${process.env.TMDB_API_READ_ACCESS_TOKEN}`,
         },
     };
 
