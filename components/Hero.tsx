@@ -8,7 +8,7 @@ import Link from "next/link";
 const Hero = () => {
     const [ activeIndex, setActiveIndex ] = useState<number>(0);
     const [ moviesData, setMoviesData ] = useState<MoviesResult>();
-    const heroMovies = moviesData?.results.slice(0,5);
+    const heroMovies = moviesData?.results?.slice(0,5);
 
     useEffect(() => {
         async function getMoviesData(){
