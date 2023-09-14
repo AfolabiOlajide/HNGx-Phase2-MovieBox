@@ -1,15 +1,9 @@
 "use client"
-import { Metadata } from "next";
 import { useState, useEffect } from "react";
 
 // local imports
 import getAllMovies from "@/lib/getAllMovies";
 import MovieCard from "@/components/MovieCard";
-
-export const metadata: Metadata = {
-    title: "Movies",
-    description: "Top Rated Movies List"
-}
 
 export default async function MovieList(){
     const [pageNumber, setPageNumber] = useState(1);
