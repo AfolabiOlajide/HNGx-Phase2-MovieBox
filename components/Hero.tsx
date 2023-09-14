@@ -1,23 +1,14 @@
 'use client'
 import { useState, useEffect } from "react";
-import getAllMovies from "@/lib/getAllMovies";
 import Image from "next/image";
 import { formatImageLink } from "@/lib/exports";
 import Link from "next/link";
 
-const Hero = () => {
+const Hero = ({ movies }: { movies: Movie[] }) => {
     const [ activeIndex, setActiveIndex ] = useState<number>(0);
     const [ start, setStart ] = useState<boolean>(true);
-    const [ moviesData, setMoviesData ] = useState<MoviesResult>();
-    const heroMovies = moviesData?.results?.slice(0,5);
+    const heroMovies = movies?.slice(0,5);
 
-    useEffect(() => {
-        async function getMoviesData(){
-            const moviesDataResult: MoviesResult = await getAllMovies('1');
-            setMoviesData(moviesDataResult);
-        }
-        getMoviesData();
-    }, []);
 
     useEffect(()=> {
         const interval = setInterval(() => {

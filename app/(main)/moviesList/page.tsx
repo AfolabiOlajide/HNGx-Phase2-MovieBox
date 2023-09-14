@@ -1,54 +1,15 @@
-"use client"
-import { useState, useEffect } from "react";
 
 // local imports
-import getAllMovies from "@/lib/getAllMovies";
-import MovieCard from "@/components/MovieCard";
-import { isNullishCoalesce } from "typescript";
+import MovieListWrapper from "./components/MovieListWrapper";
 
 export default async function MovieList(){
-    const [pageNumber, setPageNumber] = useState(1);
-    const [movieData, setMovieData] = useState<MoviesResult>()
-    const totalPages = movieData?.total_pages ?? 3000;
 
-    // Movie request
-    useEffect(() => {
-        const fetchData = async () => {
-            const moviesData: MoviesResult = await getAllMovies(`${pageNumber}`);
-            setMovieData(moviesData);
-        }
-
-        fetchData();
-    
-    }, [pageNumber]);
-
-    // --------------------------------
-    const previousPage = ()=> {
-        if(pageNumber > 1){
-            setPageNumber(prev => prev-1);
-        }
-    }
-
-    // --------------------------------
-    const nextPage = ()=> {
-        if(pageNumber < totalPages){
-            setPageNumber(prev => prev+1);
-        }
-    }
-
-    const content = movieData?.results?.map(movies => (
-        <MovieCard key={movies?.id} id={movies?.id} title={movies?.title} release_date={movies?.release_date} poster={movies?.poster_path} />
-    ))
 
     return(
         <main className="w-[95%] md:w-[80%] m-auto pt-[2rem]">
             <h1 className="text-[1rem] md:text-[2rem] mb-[2rem]">Movies List</h1>
             <div className="featured-movies gap-x-[2rem] gap-y-[3rem] grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2">
-                { content }
-            </div>
-            <div className="pagination flex gap-[3rem] mx-auto w-max mt-[2rem]">
-            <button className="bg-main text-white rounded-md py-[.3rem] px-[1rem]" onClick={previousPage}>previous</button>
-            <button className="bg-main text-white rounded-md py-[.3rem] px-[1rem]" onClick={nextPage}>next</button>
+                <MovieListWrapper/>
             </div>
         </main>
     )
