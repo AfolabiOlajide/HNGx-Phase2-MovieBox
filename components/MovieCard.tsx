@@ -16,7 +16,8 @@ type MovieCardProp = {
 }
 
 const MovieCard = (props: MovieCardProp) => {
-    const [ clickedState, setClickedState ] = useState<boolean>(false)
+    const [ clickedState, setClickedState ] = useState<boolean>(false);
+    const releaseDate = new Date(props?.release_date).toUTCString();
 
     const handleClickedState = ()=> {
         if(clickedState){
@@ -56,7 +57,7 @@ const MovieCard = (props: MovieCardProp) => {
                     <div className="details mt-[1rem]">
                         <p className="movie-title mb-[1rem] font-bold md:text-base text-[.7rem]" datat-testid="movie-title">{props.title}</p>
 
-                        <span className="realease-date text-gray-500 md:text-base text-[.7rem]" data-testid="movie-release-date">Realease Date: {props.release_date}</span>
+                        <span className="realease-date text-gray-500 md:text-base text-[.7rem]" data-testid="movie-release-date">Realease Date: {releaseDate}</span>
                     </div>
                 </div>
             </Link>

@@ -12,6 +12,7 @@ type Params = {
 export default async function MovieDetails({ params: { id } }: Params){
     const movieData: Promise<MovieDetail> = getMovie(id);
     const movie = await movieData;
+    const releaseDate = new Date(movie.release_date).toUTCString();
 
     return(
         <div className="movie-details pb-[6rem] pt-[2rem]">
@@ -29,7 +30,7 @@ export default async function MovieDetails({ params: { id } }: Params){
                 ))}
             </div>
             <div className="others flex gap-[2rem] mt-[2rem]">
-                <span className="text-[.7rem] md:text-base" data-testid="movie-release-date">Release Date: <span className="text-main">{movie.release_date}</span></span>
+                <span className="text-[.7rem] md:text-base" data-testid="movie-release-date">Release Date: <span className="text-main">{releaseDate}</span></span>
                 <span className="text-[.7rem] md:text-base" data-testid="movie-runtime">Time: <span className="text-main">{movie.runtime} minutes</span></span>
             </div>
         </div>
