@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Nav = () => {
     return (
-        <div className="bg-black md:bg-black/10 py-[2rem] relative md:absolute top-0 right-0 left-0 z-40">
+        <div className="bg-black md:bg-black/10 py-[1.3rem] md:py-[2rem] relative md:absolute top-0 right-0 left-0 z-40">
             <div className="w-[90%] md:w-[80%] mx-auto">
                 <div className="flex md:grid md:grid-cols-3 justify-between items-center">
                     <Link href={'/'}>

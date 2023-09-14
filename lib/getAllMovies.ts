@@ -4,7 +4,7 @@ export default async function getAllMovies(page: string) {
         method: "GET",
         headers: {
             accept: "application/json",
-            Authorization:
+            Authorization: 
             `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZWQ5NGVjOTMzOWNiYjA2Y2IxYmUxZGZkNGY4N2UwMyIsInN1YiI6IjY0ZmU2NTU5YzJmZjNkMDBlMTJmYzliYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5Y_4FuxRbLwe1HqRUNyp6LRHZESpKPYDa9hF6ElT8AM`,
         },
     };

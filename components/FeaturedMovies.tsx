@@ -15,7 +15,7 @@ const FeaturedMovies = async () => {
     ))
 
     return (
-        <div className="w-[95%] md:w-[80%] m-auto pt-[5rem]">
+        <div className="w-[95%] md:w-[80%] m-auto pt-[2rem]">
             <header className="flex justify-between mb-10">
                 <h2 className="md:text-[2rem] text-[1rem]">Top 10 Rated</h2>
                 <Link href={`/moviesList`} className="text-main flex items-center gap-[1rem]">

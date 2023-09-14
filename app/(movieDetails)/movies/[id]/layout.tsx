@@ -4,6 +4,7 @@ import { DM_Sans } from 'next/font/google'
 // local imports
 import '../../../(main)/globals.css'
 import SideBar from './components/SideBar';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Movies List',
@@ -24,6 +25,9 @@ export default function RootLayout({
           <SideBar />
           <div className="content w-[90%] mx-auto overflow-y-auto">
             {children}
+            <div className="footer block md:hidden">
+              <Footer />
+            </div>
           </div>
         </div>
       </body>

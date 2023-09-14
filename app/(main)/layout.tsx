@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${dmSans.className}`}>
+      <body className={`${dmSans.className} overflow-x-hidden`}>
         <Nav />
         {children}
         <Footer />
